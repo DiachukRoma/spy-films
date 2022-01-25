@@ -1,0 +1,107 @@
+@import "./../variables.scss";
+
+@mixin display($breakpoint-name-with-dash) {
+	/* display */
+	.d {
+		&-fl#{$breakpoint-name-with-dash} {
+			display: flex;
+		}
+		&-in-fl#{$breakpoint-name-with-dash} {
+			display: inline-flex;
+		}
+		&-bl#{$breakpoint-name-with-dash} {
+			display: block;
+		}
+		&-in-bl#{$breakpoint-name-with-dash} {
+			display: inline-block;
+		}
+		&-gr#{$breakpoint-name-with-dash} {
+			display: grid;
+		}
+		&-no#{$breakpoint-name-with-dash} {
+			display: none;
+		}
+	}
+
+	/* flex growing shrinking */
+	.fl-sh-0#{$breakpoint-name-with-dash} {
+		flex-shrink: 0;
+	}
+	.fl-sh-1#{$breakpoint-name-with-dash} {
+		flex-shrink: 1;
+	}
+	.fl-gr-1#{$breakpoint-name-with-dash} {
+		flex-grow: 1;
+	}
+	.fl-gr-0#{$breakpoint-name-with-dash} {
+		flex-grow: 0;
+	}
+	.fl-100#{$breakpoint-name-with-dash} {
+		flex: 1 0 0;
+	}
+
+	/* flex aligning */
+	.al-it-ce#{$breakpoint-name-with-dash} {
+		align-items: center;
+	}
+	.al-it-fl-st#{$breakpoint-name-with-dash} {
+		align-items: flex-start;
+	}
+	.al-it-fl-en#{$breakpoint-name-with-dash} {
+		align-items: flex-end;
+	}
+	.al-it-st#{$breakpoint-name-with-dash} {
+		align-items: stretch;
+	}
+	.ju-co-fl-st#{$breakpoint-name-with-dash} {
+		justify-content: flex-start;
+	}
+	.ju-co-sp-be#{$breakpoint-name-with-dash} {
+		justify-content: space-between;
+	}
+	.ju-co-sp-ar#{$breakpoint-name-with-dash} {
+		justify-content: space-around;
+	}
+	.ju-co-fl-en#{$breakpoint-name-with-dash} {
+		justify-content: flex-end;
+	}
+	.ju-co-ce#{$breakpoint-name-with-dash} {
+		justify-content: center;
+	}
+	.fl-di-co#{$breakpoint-name-with-dash} {
+		flex-direction: column;
+	}
+	.fl-di-ro#{$breakpoint-name-with-dash} {
+		flex-direction: row;
+	}
+	.fl-wr-wr#{$breakpoint-name-with-dash} {
+		flex-wrap: wrap;
+	}
+	.fl-ce#{$breakpoint-name-with-dash} {
+		align-items: center;
+		justify-content: center;
+	}
+
+	/* flex children order */
+	.or {
+		$i: 0;
+		@while $i <= 5 {
+			&-#{$i}#{$breakpoint-name-with-dash} {
+				order: $i;
+			}
+			$i: $i + 1;
+		}
+	}
+
+	/* box-sizing */
+	.bo-si {
+		&-co-bo#{$breakpoint-name-with-dash} {
+			box-sizing: content-box;
+		}
+	}
+
+	/* overflow */
+	.ov-hi#{$breakpoint-name-with-dash} {
+		overflow: hidden;
+	}
+}

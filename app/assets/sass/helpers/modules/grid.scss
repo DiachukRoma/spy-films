@@ -1,0 +1,54 @@
+@use 'sass:math';
+@use 'sass:map';
+@import './../variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  &-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+[class^='col-'],
+[class*=' col-'] {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@mixin grid($breakpoint-name-with-dash: '', $breakpoint-name: '') {
+  /* container max-width */
+  .container {
+    max-width: map.get($container-max-widths, $breakpoint-name);
+  }
+
+  /* columns */
+  @for $i from 1 through $max-columns {
+    .offset#{$breakpoint-name-with-dash}-#{$i} {
+      margin-left: #{math.div(100, $max-columns) * $i + '%'};
+    }
+    .col#{$breakpoint-name-with-dash}-#{$i} {
+      flex: 0 0 #{math.div(100, $max-columns) * $i + '%'};
+      max-width: #{math.div(100, $max-columns) * $i + '%'};
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import './../variables.scss';
+
+$padding-margin: (
+  'initial-value': 0,
+  'max-value': $padding-margin-max,
+  'step': $padding-margin-step,
+  'need-auto': true,
+  'properties-group': (
+    '.p': 'padding',
+    '.pl': 'padding-left',
+    '.pr': 'padding-right',
+    '.pb': 'padding-bottom',
+    '.pt': 'padding-top',
+    '.m': 'margin',
+    '.ml': 'margin-left',
+    '.mr': 'margin-right',
+    '.mb': 'margin-bottom',
+    '.mt': 'margin-top',
+    '.mx': (
+      'margin-left',
+      'margin-right',
+    ),
+    '.my': (
+      'margin-top',
+      'margin-bottom',
+    ),
+    '.px': (
+      'padding-left',
+      'padding-right',
+    ),
+    '.py': (
+      'padding-top',
+      'padding-bottom',
+    ),
+  ),
+);

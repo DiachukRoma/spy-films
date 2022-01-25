@@ -1,0 +1,25 @@
+@import "./../variables.scss";
+@import "./../mixins/make-css-from-group.scss";
+
+@import "./../modules/padding-margin.scss";
+@import "./../modules/width-height.scss";
+@import "./../modules/text.scss";
+@import "./../modules/display.scss";
+@import "./../modules/positioning.scss";
+@import "./../modules/colors.scss";
+@import "./../modules/background.scss";
+
+@mixin all-css($breakpoint-name-with-dash: "") {
+	$no-breakpoint: if($breakpoint-name-with-dash == "", true, false);
+
+	@include make-css-from-group($padding-margin, $breakpoint-name-with-dash, $no-breakpoint);
+	@include make-css-from-group($width-height, $breakpoint-name-with-dash, $no-breakpoint);
+	@include width-height($breakpoint-name-with-dash);
+	@include make-css-from-group($font-size, $breakpoint-name-with-dash, $no-breakpoint);
+	@include make-css-from-group($font-weight, $breakpoint-name-with-dash, $no-breakpoint);
+	@include text($breakpoint-name-with-dash, $no-breakpoint);
+	@include display($breakpoint-name-with-dash);
+	@include positioning($breakpoint-name-with-dash);
+	@include colors($breakpoint-name-with-dash);
+	@include background($breakpoint-name-with-dash);
+}

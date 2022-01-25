@@ -1,0 +1,95 @@
+* {
+	font-family: "Inconsolata", monospace;
+  font-weight: 500;
+}
+
+html {
+	font-size: 16px;
+	@media (max-width: 1440px) {
+		font-size: 15px;
+	}
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
+	@media (max-width: 576px) {
+		font-size: 13px;
+	}
+}
+
+body {
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0 15px;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+button {
+	transition: 0.2s;
+}
+
+.fit {
+	position: relative;
+	& > img,
+	& > video,
+	& > svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&--contain {
+		& > img,
+		& > video,
+		& > svg {
+			object-fit: contain;
+		}
+	}
+	&--top {
+		& > img,
+		& > video {
+			object-position: top;
+		}
+	}
+}
+
+.br-r {
+	border-radius: 3.125rem;
+}
+
+.container {
+	&--fluid {
+		max-width: 100%;
+	}
+	&--1410 {
+		@media (min-width: 1440px) {
+			max-width: 1410px;
+		}
+	}
+}

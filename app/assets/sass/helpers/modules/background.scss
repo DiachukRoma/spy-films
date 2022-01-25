@@ -1,0 +1,28 @@
+@mixin background($breakpoint-name-with-dash) {
+  .ba {
+    &-si-cov#{$breakpoint-name-with-dash} {
+      background-size: cover;
+    }
+    &-si-con#{$breakpoint-name-with-dash} {
+      background-size: contain;
+    }
+    &-po-ce#{$breakpoint-name-with-dash} {
+      background-position: center;
+    }
+    &-po-to#{$breakpoint-name-with-dash} {
+      background-position: top;
+    }
+    &-po-bo#{$breakpoint-name-with-dash} {
+      background-position: bottom;
+    }
+    &-po-le#{$breakpoint-name-with-dash} {
+      background-position: left;
+    }
+    &-re-no-re#{$breakpoint-name-with-dash} {
+      background-repeat: no-repeat;
+    }
+    &-at-fi#{$breakpoint-name-with-dash} {
+      background-attachment: fixed;
+    }
+  }
+}

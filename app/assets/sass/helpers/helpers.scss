@@ -1,0 +1,38 @@
+// helpers.scss
+// version 1.0.0
+// makes workflow faster, flexible
+// makes layout responsive on fly (font-size, margin, padding, width, height) using rem units
+// author - https://kovalchik.com.ua
+// how to use -
+
+@use 'sass:map';
+@import './variables.scss';
+@import './modules/grid.scss';
+@import './mixins/all-css.scss';
+
+/* grid classes without breakpoint */
+@include grid();
+
+/* grid classes with breakpoints */
+@each $breakpoint-name, $container-width in $container-max-widths {
+  $screen-width: map.get($grid-breakpoints, $breakpoint-name);
+  $breakpoint-name-with-dash: '-#{$breakpoint-name}';
+
+  @media (min-width: $screen-width) {
+    @include grid($breakpoint-name-with-dash, $breakpoint-name);
+  }
+}
+
+/* all other classes without breakpoint */
+@include all-css();
+
+/* all other classes with breakpoints */
+$query: if($mobile-first, 'min-width', 'max-width');
+
+@each $breakpoint-name, $screen-width in $grid-breakpoints {
+  $breakpoint-name-with-dash: '-#{$breakpoint-name}';
+
+  @media (#{$query}: $screen-width) {
+    @include all-css($breakpoint-name-with-dash);
+  }
+}

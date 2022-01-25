@@ -1,0 +1,102 @@
+@use 'sass:math';
+@import './../variables.scss';
+
+$font-size: (
+  'initial-value': 0,
+  'max-value': $font-size-max,
+  'step': 1,
+  'properties-group': (
+    '.f': 'font-size',
+  ),
+);
+
+$font-weight: (
+  'initial-value': 300,
+  'max-value': 900,
+  'step': 100,
+  'no-units': true,
+  'properties-group': (
+    '.f': 'font-weight',
+  ),
+);
+
+@mixin text($breakpoint-name-with-dash, $no-breakpoint) {
+  /* font appearance */
+  .f {
+    &-up#{$breakpoint-name-with-dash} {
+      text-transform: uppercase;
+    }
+    &-un#{$breakpoint-name-with-dash} {
+      text-decoration: underline;
+    }
+    &-it#{$breakpoint-name-with-dash} {
+      font-style: italic;
+    }
+    &-no#{$breakpoint-name-with-dash} {
+      text-decoration: none;
+    }
+    &-li-th#{$breakpoint-name-with-dash} {
+      text-decoration: line-through;
+    }
+  }
+
+  /* text align */
+  .te-al {
+    &-le#{$breakpoint-name-with-dash} {
+      text-align: left;
+    }
+    &-ce#{$breakpoint-name-with-dash} {
+      text-align: center;
+    }
+    &-ri#{$breakpoint-name-with-dash} {
+      text-align: right;
+    }
+  }
+
+  /* line height */
+  .li-he {
+    $i: 0;
+    $k: 0;
+    @while $i <= 3 {
+      &-#{$k}#{$breakpoint-name-with-dash} {
+        line-height: #{$i};
+      }
+      $i: $i + 0.1;
+      $k: $k + 1;
+    }
+  }
+
+  /* letter spacing */
+  .le-sp {
+    $i: -2;
+    $k: -20;
+    @while $i <= 3 {
+      &-#{$k}#{$breakpoint-name-with-dash} {
+        @if ($no-breakpoint) {
+          letter-spacing: #{math.div($i, $font-root)}rem;
+        } @else {
+          letter-spacing: #{$i}px;
+        }
+      }
+      $i: $i + 0.1;
+      $k: $k + 1;
+    }
+  }
+
+  /* white space */
+  .wh-sp {
+    &-no-wr#{$breakpoint-name-with-dash} {
+      white-space: nowrap;
+    }
+    &-no#{$breakpoint-name-with-dash} {
+      white-space: normal;
+    }
+  }
+
+  /* word-break */
+  .wo-br#{$breakpoint-name-with-dash} {
+    &-br-al {
+      word-break: break-all;
+    }
+  }
+}

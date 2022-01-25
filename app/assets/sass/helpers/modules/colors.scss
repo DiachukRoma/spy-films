@@ -1,0 +1,26 @@
+@use 'sass:map';
+@import './../variables.scss';
+
+$colors-properties-group: (
+  '.c': 'color',
+  '.bg': 'background-color',
+  '.bo': 'border-color',
+);
+
+@mixin colors($breakpoint-name-with-dash) {
+  $properties-group: map.get($colors, 'properties-group');
+
+  @each $color-name, $color-hex in $colors {
+    @each $class, $properties in $colors-properties-group {
+      #{$class}-#{$color-name}#{$breakpoint-name-with-dash} {
+        @each $property in $properties {
+          #{$property}: $color-hex;
+          &-hover:hover {
+            #{$property}: $color-hex;
+          }
+          /* add your own events here */
+        }
+      }
+    }
+  }
+}

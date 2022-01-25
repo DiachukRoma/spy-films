@@ -1,0 +1,147 @@
+@import './../variables.scss';
+
+@mixin positioning($breakpoint-name-with-dash) {
+  /* position */
+  .po {
+    &-re#{$breakpoint-name-with-dash} {
+      position: relative;
+    }
+    &-ab#{$breakpoint-name-with-dash} {
+      position: absolute;
+    }
+    &-fi#{$breakpoint-name-with-dash} {
+      position: fixed;
+    }
+    &-sta#{$breakpoint-name-with-dash} {
+      position: static;
+    }
+    &-sti#{$breakpoint-name-with-dash} {
+      position: sticky;
+    }
+  }
+
+  /* top */
+  .to {
+    &-0#{$breakpoint-name-with-dash} {
+      top: 0;
+    }
+    &-50#{$breakpoint-name-with-dash} {
+      top: 50%;
+    }
+  }
+
+  /* bottom */
+  .bo {
+    &-0#{$breakpoint-name-with-dash} {
+      bottom: 0;
+    }
+    &-50#{$breakpoint-name-with-dash} {
+      bottom: 50%;
+    }
+  }
+
+  /* left */
+  .le {
+    &-0#{$breakpoint-name-with-dash} {
+      left: 0;
+    }
+    &-50#{$breakpoint-name-with-dash} {
+      left: 50%;
+    }
+  }
+
+  /* right */
+  .ri {
+    &-0#{$breakpoint-name-with-dash} {
+      right: 0;
+    }
+    &-50#{$breakpoint-name-with-dash} {
+      right: 50%;
+    }
+  }
+
+  /* z-index */
+  .z-in {
+    $i: -1;
+    @while $i <= $z-index-max {
+      &-#{$i}#{$breakpoint-name-with-dash} {
+        z-index: #{$i};
+      }
+      $i: $i + 1;
+    }
+  }
+
+  /* transform */
+  .tr {
+    /* translate */
+    &-tr-x {
+      &-50#{$breakpoint-name-with-dash} {
+        transform: translateX(50%);
+      }
+      &-100#{$breakpoint-name-with-dash} {
+        transform: translateX(100%);
+      }
+    }
+    &-tr-xy {
+      &-50#{$breakpoint-name-with-dash} {
+        transform: translate(50%, 50%);
+      }
+      &-100#{$breakpoint-name-with-dash} {
+        transform: translate(100%, 100%);
+      }
+    }
+    &-tr-x {
+      &--50#{$breakpoint-name-with-dash} {
+        transform: translateX(-50%);
+      }
+      &--100#{$breakpoint-name-with-dash} {
+        transform: translateX(-100%);
+      }
+    }
+    &-tr-y {
+      &-50#{$breakpoint-name-with-dash} {
+        transform: translateY(50%);
+      }
+      &-100#{$breakpoint-name-with-dash} {
+        transform: translateY(100%);
+      }
+    }
+    &-tr-y {
+      &--50#{$breakpoint-name-with-dash} {
+        transform: translateY(-50%);
+      }
+      &--100#{$breakpoint-name-with-dash} {
+        transform: translateY(-100%);
+      }
+    }
+    &-tr-xy {
+      &--50#{$breakpoint-name-with-dash} {
+        transform: translate(-50%, -50%);
+      }
+      &--100#{$breakpoint-name-with-dash} {
+        transform: translate(-100%, -100%);
+      }
+    }
+  }
+
+  /* object */
+  .ob {
+    &-po {
+      &-ri#{$breakpoint-name-with-dash} {
+        object-position: right;
+      }
+      &-le#{$breakpoint-name-with-dash} {
+        object-position: left;
+      }
+      &-ce#{$breakpoint-name-with-dash} {
+        object-position: center;
+      }
+      &-to#{$breakpoint-name-with-dash} {
+        object-position: top;
+      }
+      &-bo#{$breakpoint-name-with-dash} {
+        object-position: bottom;
+      }
+    }
+  }
+}

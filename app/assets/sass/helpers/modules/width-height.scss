@@ -1,0 +1,41 @@
+@import './../variables.scss';
+
+$width-height: (
+  'initial-value': 0,
+  'max-value': $width-height-max,
+  'step': $width-height-step,
+  'need-auto': true,
+  'properties-group': (
+    '.ma-wi': 'max-width',
+    '.mi-wi': 'min-width',
+    '.mi-he': 'min-height',
+    '.ma-he': 'max-height',
+    '.wi': 'width',
+    '.he': 'height',
+    '.wi-he': (
+      'width',
+      'height',
+    ),
+  ),
+);
+
+@mixin width-height($breakpoint-name-with-dash) {
+  .h-100#{$breakpoint-name-with-dash} {
+    height: 100%;
+  }
+  .w-100#{$breakpoint-name-with-dash} {
+    width: 100%;
+  }
+  .mw-100#{$breakpoint-name-with-dash} {
+    max-width: 100%;
+  }
+  .mh-100#{$breakpoint-name-with-dash} {
+    max-height: 100%;
+  }
+  .ma-wi-no#{$breakpoint-name-with-dash} {
+    max-width: none;
+  }
+  .ma-he-no#{$breakpoint-name-with-dash} {
+    max-height: none;
+  }
+}

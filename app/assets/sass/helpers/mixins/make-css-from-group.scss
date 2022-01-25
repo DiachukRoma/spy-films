@@ -1,0 +1,40 @@
+@use 'sass:math';
+@use 'sass:map';
+
+@mixin make-css-from-group(
+  $css-group,
+  $breakpoint-name-with-dash,
+  $no-breakpoint
+) {
+  $initial_value: map.get($css-group, 'initial-value');
+  $max_val: map.get($css-group, 'max-value');
+  $step: map.get($css-group, 'step');
+  $need_auto: map.get($css-group, 'need-auto');
+  $no_units: map.get($css-group, 'no-units');
+  $properties-group: map.get($css-group, 'properties-group');
+
+  @each $class, $properties in $properties-group {
+    $i: $initial_value;
+
+    @while $i <= $max_val {
+      #{$class}-#{$i}#{$breakpoint-name-with-dash} {
+        @each $property in $properties {
+          @if ($no-breakpoint) {
+            #{$property}: #{if($no_units, $i, #{math.div($i, $font-root)}rem)};
+          } @else {
+            #{$property}: #{$i}#{if($no_units, '', 'px')};
+          }
+        }
+      }
+      $i: $i + $step;
+    }
+
+    @if ($need_auto) {
+      #{$class}-auto#{$breakpoint-name-with-dash} {
+        @each $property in $properties {
+          #{$property}: auto;
+        }
+      }
+    }
+  }
+}

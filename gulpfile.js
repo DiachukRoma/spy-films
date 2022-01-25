@@ -1,0 +1,5 @@
+require('./gulp-tasks/task-helpers')
+require('./gulp-tasks/task-styles')
+require('./gulp-tasks/task-scripts')
+require('./gulp-tasks/task-watch')
+require('./gulp-tasks/task-build')

@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+* {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+}
+
+html {
+  font-size: 16px;
+}
+@media (max-width: 1440px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 15px;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  transition: 0.2s;
+}
+
+.fit {
+  position: relative;
+}
+.fit > img, .fit > video, .fit > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fit--contain > img, .fit--contain > video, .fit--contain > svg {
+  object-fit: contain;
+}
+.fit--top > img, .fit--top > video {
+  object-position: top;
+}
+
+.br-r {
+  border-radius: 3.125rem;
+}
+
+.container--fluid {
+  max-width: 100%;
+}
+@media (min-width: 1440px) {
+  .container--1410 {
+    max-width: 1410px;
+  }
+}
+
+.link {
+  border-bottom: 1px solid;
+  display: block;
+  position: relative;
+  padding-bottom: 1.25rem;
+  overflow: hidden;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 0.78rem;
+  height: 0.78rem;
+  -webkit-mask-image: url("../../../images/icons/link.svg");
+  mask-image: url("../../../images/icons/link.svg");
+}
+.link::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background: #000;
+  left: -100%;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.link:hover::after {
+  left: 0;
+}
+.link.c-red14::before {
+  background-color: #fb1414;
+}
+.link.c-whiteff::before {
+  background-color: #ffffff;
+}
+
+.cart {
+  width: 100%;
+  border-radius: 3.125rem;
+}
+
+.header {
+  height: 5.625rem;
+}
+.header .btn_menu {
+  width: 26px;
+  height: 26px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+.header .btn_menu::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: calc(50% - 3px);
+  left: 0;
+}
+.header .btn_menu::after {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: calc(50% + 3px);
+  left: 0;
+}
+.header .btn_menu--close::before {
+  transform: rotate(45deg);
+  top: 16px;
+}
+.header .btn_menu--close::after {
+  transform: rotate(-45deg);
+}
+.header .toggle_menu {
+  right: -375px;
+  transition: all 0.8s;
+  max-height: 100vh;
+  overflow: auto;
+}
+.header .toggle_menu::-webkit-scrollbar {
+  width: 0.2rem;
+}
+.header .toggle_menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.header .toggle_menu::-webkit-scrollbar-thumb {
+  background-color: #FB1414;
+}
+
+.menu_active .toggle_menu {
+  right: 0;
+}
+/*# sourceMappingURL=styles.css.map */

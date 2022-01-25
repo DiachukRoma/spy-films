@@ -1,0 +1,41 @@
+.link {
+	border-bottom: 1px solid;
+	display: block;
+	position: relative;
+	padding-bottom: 1.25rem;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 4px;
+		right: 0;
+		width: 0.78rem;
+		height: 0.78rem;
+		-webkit-mask-image: url("../../../images/icons/link.svg");
+		mask-image: url("../../../images/icons/link.svg");
+	}
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		background: #000;
+		left: -100%;
+		bottom: 0;
+		transition: all 0.3s;
+	}
+
+	&:hover::after {
+		left: 0;
+	}
+
+	&.c-red14::before {
+		background-color: #fb1414;
+	}
+
+	&.c-whiteff::before {
+		background-color: #ffffff;
+	}
+}
