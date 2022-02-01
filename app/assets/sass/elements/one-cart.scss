@@ -1,4 +1,12 @@
 .cart {
 	width: 100%;
+	min-height: 15.125rem;
 	border-radius: 3.125rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&.card_director {
+		justify-content: flex-end;
+	}
 }

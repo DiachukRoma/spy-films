@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-export default class AboutUs {
+export default class Header {
   constructor() {
     this.events()
   }

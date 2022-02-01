@@ -1,4 +1,6 @@
 // import homePage from './pages/home-page.js'
-import header from './common/header'
+import Header from './common/header'
+import Video from './common/video'
 
-new header()
+new Header()
+new Video()

@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
   margin: 0 15px;
@@ -129,7 +128,14 @@ button {
 
 .cart {
   width: 100%;
+  min-height: 15.125rem;
   border-radius: 3.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart.card_director {
+  justify-content: flex-end;
 }
 
 .header {

@@ -10,6 +10,7 @@ $max-columns: 12;
 
 /* responsive classes tiles depends on breakpoints; from highest to lowest */
 $grid-breakpoints: (
+  'xxxl': 1920px,
   'xxl': 1440px,
   'xl': 1200px,
   'lg': 992px,
@@ -21,11 +22,12 @@ $grid-breakpoints: (
 /* container max widths depends on breakpoints; from lowest to highest */
 $container-max-widths: (
   'xs': 100%,
-  'sm': 546px,
-  'md': 738px,
-  'lg': 972px,
-  'xl': 1170px,
-  'xxl': 1410px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1440px,
+  'xxxl': 1920px,
 );
 
 /* numeric variables */
